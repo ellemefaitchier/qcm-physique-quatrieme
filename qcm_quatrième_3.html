@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>QCM - Changements d’état de la matière</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; line-height: 1.6; }
+        h1 { color: #2c3e50; }
+        .question { margin-bottom: 20px; padding: 10px; border: 1px solid #ddd; border-radius: 8px; }
+        .correction { color: green; margin-top: 5px; display: none; }
+        .incorrect { color: red; text-decoration: line-through; }
+        button { padding: 10px 20px; background: #3498db; color: white; border: none; cursor: pointer; border-radius: 5px; }
+        button:hover { background: #2980b9; }
+        #result { margin-top: 20px; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+<h1>QCM : Les changements d’état de la matière (4e)</h1>
+
+<form id="qcm">
+
+    <div class="question">
+        <strong>1.</strong> Lors d’un changement d’état, la masse d’un corps :<br>
+        <label><input type="radio" name="q1" value="a"> diminue</label><br>
+        <label><input type="radio" name="q1" value="b"> augmente</label><br>
+        <label><input type="radio" name="q1" value="c"> reste la même</label>
+        <div class="correction">✅ Réponse correcte : c) reste la même</div>
+    </div>
+
+    <div class="question">
+        <strong>2.</strong> Le passage de l’état solide à l’état liquide s’appelle :<br>
+        <label><input type="radio" name="q2" value="a"> la condensation</label><br>
+        <label><input type="radio" name="q2" value="b"> la fusion</label><br>
+        <label><input type="radio" name="q2" value="c"> la vaporisation</label>
+        <div class="correction">✅ Réponse correcte : b) la fusion</div>
+    </div>
+
+    <div class="question">
+        <strong>3.</strong> Lorsqu’un liquide se transforme en gaz sans ébullition, on parle de :<br>
+        <label><input type="radio" name="q3" value="a"> sublimation</label><br>
+        <label><input type="radio" name="q3" value="b"> évaporation</label><br>
+        <label><input type="radio" name="q3" value="c"> solidification</label>
+        <div class="correction">✅ Réponse correcte : b) évaporation</div>
+    </div>
+
+    <div class="question">
+        <strong>4.</strong> Le passage direct de l’état solide à l’état gazeux s’appelle :<br>
+        <label><input type="radio" name="q4" value="a"> sublimation</label><br>
+        <label><input type="radio" name="q4" value="b"> liquéfaction</label><br>
+        <label><input type="radio" name="q4" value="c"> condensation</label>
+        <div class="correction">✅ Réponse correcte : a) sublimation</div>
+    </div>
+
+    <div class="question">
+        <strong>5.</strong> Quand de l’eau passe de l’état liquide à l’état solide, elle subit :<br>
+        <label><input type="radio" name="q5" value="a"> la fusion</label><br>
+        <label><input type="radio" name="q5" value="b"> la solidification</label><br>
+        <label><input type="radio" name="q5" value="c"> la vaporisation</label>
+        <div class="correction">✅ Réponse correcte : b) la solidification</div>
+    </div>
+
+    <div class="question">
+        <strong>6.</strong> Pendant un changement d’état, la température :<br>
+        <label><input type="radio" name="q6" value="a"> augmente</label><br>
+        <label><input type="radio" name="q6" value="b"> reste constante</label><br>
+        <label><input type="radio" name="q6" value="c"> diminue</label>
+        <div class="correction">✅ Réponse correcte : b) reste constante</div>
+    </div>
+
+    <div class="question">
+        <strong>7.</strong> Le passage de l’état gazeux à l’état liquide se nomme :<br>
+        <label><input type="radio" name="q7" value="a"> la condensation</label><br>
+        <label><input type="radio" name="q7" value="b"> la sublimation</label><br>
+        <label><input type="radio" name="q7" value="c"> la fusion</label>
+        <div class="correction">✅ Réponse correcte : a) la condensation</div>
+    </div>
+
+    <div class="question">
+        <strong>8.</strong> Lorsque l’on chauffe de l’eau à 100°C sous pression atmosphérique normale, elle :<br>
+        <label><input type="radio" name="q8" value="a"> se solidifie</label><br>
+        <label><input type="radio" name="q8" value="b"> bout</label><br>
+        <label><input type="radio" name="q8" value="c"> gèle</label>
+        <div class="correction">✅ Réponse correcte : b) bout</div>
+    </div>
+
+    <div class="question">
+        <strong>9.</strong> L’air est principalement composé de :<br>
+        <label><input type="radio" name="q9" value="a"> dioxygène et azote</label><br>
+        <label><input type="radio" name="q9" value="b"> dioxyde de carbone et vapeur d’eau</label><br>
+        <label><input type="radio" name="q9" value="c"> hydrogène et hélium</label>
+        <div class="correction">✅ Réponse correcte : a) dioxygène et azote</div>
+    </div>
+
+    <div class="question">
+        <strong>10.</strong> Pendant la fusion d’un glaçon, l’énergie thermique :<br>
+        <label><input type="radio" name="q10" value="a"> est libérée par le glaçon</label><br>
+        <label><input type="radio" name="q10" value="b"> est absorbée par le glaçon</label><br>
+        <label><input type="radio" name="q10" value="c"> ne change pas</label>
+        <div class="correction">✅ Réponse correcte : b) est absorbée par le glaçon</div>
+    </div>
+
+    <button type="button" onclick="corriger()">Corriger</button>
+</form>
+
+<div id="result"></div>
+
+<script>
+function corriger() {
+    let reponses = {
+        q1: "c", q2: "b", q3: "b", q4: "a", q5: "b",
+        q6: "b", q7: "a", q8: "b", q9: "a", q10: "b"
+    };
+    let score = 0;
+
+    for (let q in reponses) {
+        let labels = document.querySelectorAll(`input[name="${q}"]`);
+        let correction = labels[0].closest('.question').querySelector('.correction');
+        correction.style.display = "block";
+
+        labels.forEach(labelInput => {
+            let label = labelInput.parentElement;
+            label.classList.remove('incorrect');
+
+            if (labelInput.checked) {
+                if (labelInput.value === reponses[q]) {
+                    score++;
+                } else {
+                    label.classList.add('incorrect');  // mauvaise réponse : rouge + barrée
+                }
+            }
+        });
+    }
+
+    document.getElementById("result").innerHTML = "Votre score : " + score + "/10";
+}
+</script>
+
+</body>
+</html>
